@@ -41,14 +41,16 @@ export default {
   },
   methods: {
     choiceBranchItem(e){
-      let branches = document.querySelectorAll('.branch-item')
-      for(let item of branches){
-        item.classList.remove('selected')
+      if(e.target.tagName === 'LI'){
+        let branches = document.querySelectorAll('.branch-item')
+        for(let item of branches){
+          item.classList.remove('selected')
+        }
+        e.target.classList.add('selected')
+        this.$store.dispatch('choiceBranch', {
+          branch: e.target.innerHTML
+        })
       }
-      e.target.classList.add('selected')
-      this.$store.dispatch('choiceBranch', {
-        branch: e.target.innerHTML
-      })
     },
     inputFilterHandler(e){
       this.$store.dispatch('filterBranches', {

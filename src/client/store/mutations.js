@@ -9,9 +9,10 @@ const mutations = {
 			});
 			return resultArr;
 		}
-		state.filteredBranches = filter(payload.keyword, state.filteredBranches)
+		state.filteredBranches = filter(payload.keyword, state.originalBranches)
 	},
 	INIT_BRANCHES: (state, branches) => {
+		state.originalBranches = branches
 		state.filteredBranches = branches
 	}
 }
