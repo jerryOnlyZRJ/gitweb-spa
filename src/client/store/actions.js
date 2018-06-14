@@ -26,6 +26,10 @@ const actions = {
 			.then(res => {
 				commit('CHANGE_PULL_RESULT', res.data.success)
 				router.push('/pullresult')
+			}).catch(err => {
+				commit('CHANGE_PULL_RESULT', false)
+				router.push('/pullresult')
+				console.log(err)
 			})
 	}
 }
