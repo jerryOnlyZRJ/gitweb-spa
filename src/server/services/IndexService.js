@@ -41,10 +41,9 @@ class UserService {
    */
   pullBranch(origin, branch) {
     try {
-      const pullresult = shell.exec(`git pull ${origin} ${branch}:${branch}`)
-      const checkoutResult = shell.exec(`git checkout ${branch}`)
-      console.log(pullresult)
-      console.log(checkoutResult)
+      shell.exec(`git pull ${origin} ${branch}:${branch}`)
+      shell.exec(`git checkout ${branch}`)
+      shell.exec('git merge master')
       return successMessage
     } catch (err) {
       console.log(err)
