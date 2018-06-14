@@ -60,7 +60,7 @@ export default {
     },
     changePullResult(){
       const _this = this
-      this.store.dispatch('changePullResult', _this.$router)
+      this.$store.dispatch('changePullResult', _this.$router)
     },
     ...mapActions([
         'initBranches'
