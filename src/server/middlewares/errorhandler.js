@@ -4,13 +4,14 @@
  */
 import log4js from 'log4js'
 import CONFIG from '../config'
+import path from 'path'
 
 log4js.configure({
   // log输出文件配置
   appenders: {
     cheese: {
       type: 'file',
-      filename: './logs/jwslog.log'
+      filename: path.join(__dirname, '../logs/jwslog.log')
     }
   },
   // 错误类别配置

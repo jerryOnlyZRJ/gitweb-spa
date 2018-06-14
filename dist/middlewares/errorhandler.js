@@ -12,18 +12,18 @@ var _config = require('../config');
 
 var _config2 = _interopRequireDefault(_config);
 
+var _path = require('path');
+
+var _path2 = _interopRequireDefault(_path);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * @description 容错机制中间件
- * @author Ranjay
- */
 _log4js2.default.configure({
   // log输出文件配置
   appenders: {
     cheese: {
       type: 'file',
-      filename: './logs/jwslog.log'
+      filename: _path2.default.join(__dirname, '../logs/jwslog.log')
     }
   },
   // 错误类别配置
@@ -33,7 +33,11 @@ _log4js2.default.configure({
       level: 'error'
     }
   }
-});
+}); /**
+     * @description 容错机制中间件
+     * @author Ranjay
+     */
+
 const logger = _log4js2.default.getLogger('cheese');
 
 /**
