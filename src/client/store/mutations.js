@@ -12,8 +12,12 @@ const mutations = {
 		state.filteredBranches = filter(payload.keyword, state.originalBranches)
 	},
 	INIT_BRANCHES: (state, branches) => {
+		state.chosenBranch = localStorage.getItem('chosenBranch')
 		state.originalBranches = branches
 		state.filteredBranches = branches
+	},
+	CHANGE_PULL_RESULT: (state, result) => {
+		state.pullResult = result
 	}
 }
 

@@ -7,7 +7,8 @@ import mutations from './mutations'
 const state = {
 	originalBranches: [],
 	chosenBranch: '',
-	filteredBranches: []
+	filteredBranches: [],
+	pullResult: true
 }
 
 Vue.use(Vuex);

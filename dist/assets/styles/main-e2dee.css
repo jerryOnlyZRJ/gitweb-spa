@@ -8,6 +8,8 @@
 .header-title[data-v-3fd9cbd1]{font-size:2rem;line-height:1.5;color:#188eee
 }
 
+body{margin:0
+}
 #app{display:flex;flex-direction:column;height:100vh;font-family:Avenir,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-align:center;color:#2c3e50
 }
 .btn{display:block;width:8rem;height:3rem;margin:1rem;border:none;border-radius:10px;font-size:2rem;cursor:pointer;color:#fff;background:#188eee;outline:none;transition:background .5s
@@ -36,3 +38,17 @@ ul li[data-v-2d73fdb1]{list-style:none
 .chosen-result[data-v-2d73fdb1]{color:red;font-size:1.5rem;font-weight:700
 }
 
+.pull-result[data-v-33a0279e]{display:flex;flex-direction:column;justify-content:center;align-items:center;height:100%
+}
+.info-logo[data-v-33a0279e]{display:block;font-size:15rem
+}
+.result-ok .info-logo[data-v-33a0279e]{color:#0bb70b
+}
+.result-err .info-logo[data-v-33a0279e]{color:#bd0101
+}
+.info-text[data-v-33a0279e]{font-size:2rem;font-family:fantasy
+}
+.result-btns[data-v-33a0279e]{display:flex
+}
+.result-btns .btn[data-v-33a0279e]{font-size:1.2rem;font-weight:700
+}

@@ -18,13 +18,12 @@
     </ul>
     <span class="branch-text">What your choice is:</span>
     <span class="chosen-result">{{getChosenBranch}}</span>
-    <button class="btn">Pull It!</button>
+    <button class="btn" @click="changePullResult">Pull It!</button>
   </div>
 </template>
 
 <script>
   import { mapActions, mapState, mapGetters } from 'vuex'
-
 
 export default {
   name: 'BranchStage',
@@ -47,8 +46,10 @@ export default {
           item.classList.remove('selected')
         }
         e.target.classList.add('selected')
+        const branchName = e.target.innerHTML
+        localStorage.setItem('chosenBranch', branchName)
         this.$store.dispatch('choiceBranch', {
-          branch: e.target.innerHTML
+          branch: branchName
         })
       }
     },
@@ -58,7 +59,8 @@ export default {
       })
     },
     ...mapActions([
-        'initBranches'
+        'initBranches',
+        'changePullResult'
     ])
   }
 }

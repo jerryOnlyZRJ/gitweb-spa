@@ -34,6 +34,6 @@ export default class UserRouter {
     pullBranch(ctx, next) {
         const branchStr = ctx.request.query.branch
         const branchArr = branchStr.split('/')
-        ctx.body = indexModel.pullBranch(branchArr[0], branchArr[1])
+        ctx.body = this.indexService.pullBranch(branchArr[0], branchArr[1])
     }
 }

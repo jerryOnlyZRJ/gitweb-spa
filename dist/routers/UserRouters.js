@@ -62,7 +62,7 @@ let UserRouter = (_dec = (0, _awilixKoa.route)('/user'), _dec2 = (0, _awilixKoa.
     pullBranch(ctx, next) {
         const branchStr = ctx.request.query.branch;
         const branchArr = branchStr.split('/');
-        ctx.body = indexModel.pullBranch(branchArr[0], branchArr[1]);
+        ctx.body = this.indexService.pullBranch(branchArr[0], branchArr[1]);
     }
 }, (_applyDecoratedDescriptor(_class2.prototype, 'getUser', [_dec2], Object.getOwnPropertyDescriptor(_class2.prototype, 'getUser'), _class2.prototype), _applyDecoratedDescriptor(_class2.prototype, 'getBranchList', [_dec3, _dec4], Object.getOwnPropertyDescriptor(_class2.prototype, 'getBranchList'), _class2.prototype), _applyDecoratedDescriptor(_class2.prototype, 'pullBranch', [_dec5, _dec6], Object.getOwnPropertyDescriptor(_class2.prototype, 'pullBranch'), _class2.prototype)), _class2)) || _class);
 exports.default = UserRouter;
