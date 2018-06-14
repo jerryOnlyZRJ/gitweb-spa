@@ -40,9 +40,14 @@ class UserService {
    * @return {Object} 
    */
   pullBranch(origin, branch) {
-    shell.exec(`git pull ${origin} ${branch}:${branch}`)
-    shell.exec(`git checkout ${branch}`)
-    return successMessage
+    try {
+      shell.exec(`git pull ${origin} ${branch}:${branch}`)
+      shell.exec(`git checkout ${branch}`)
+      return successMessage
+    } catch (err) {
+      console.log(err)
+      return failMessage
+    }
   }
 }
 

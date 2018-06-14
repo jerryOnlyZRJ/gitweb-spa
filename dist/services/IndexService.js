@@ -49,9 +49,14 @@ let UserService = class UserService {
    * @return {Object} 
    */
   pullBranch(origin, branch) {
-    _shelljs2.default.exec(`git pull ${origin} ${branch}:${branch}`);
-    _shelljs2.default.exec(`git checkout ${branch}`);
-    return successMessage;
+    try {
+      _shelljs2.default.exec(`git pull ${origin} ${branch}:${branch}`);
+      _shelljs2.default.exec(`git checkout ${branch}`);
+      return successMessage;
+    } catch (err) {
+      console.log(err);
+      return failMessage;
+    }
   }
 };
 exports.default = UserService;
