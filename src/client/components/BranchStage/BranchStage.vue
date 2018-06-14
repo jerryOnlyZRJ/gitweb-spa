@@ -19,16 +19,26 @@
     <span class="branch-text">What your choice is:</span>
     <span class="chosen-result">{{getChosenBranch}}</span>
     <button class="btn" @click="changePullResult">Pull It!</button>
+    <Loader :loading="loading"></Loader>
   </div>
 </template>
 
 <script>
   import { mapActions, mapState, mapGetters } from 'vuex'
+  import Loader from '../Loader/Loader'
 
 export default {
   name: 'BranchStage',
   mounted: function() {
     this.initBranches()
+  },
+  data: function(){
+    return {
+      loading: false
+    }
+  },
+  components: {
+    Loader
   },
   computed: {
     ...mapState([
@@ -60,6 +70,7 @@ export default {
     },
     changePullResult(){
       const _this = this
+      this.loading = true
       this.$store.dispatch('changePullResult', _this.$router)
     },
     ...mapActions([
