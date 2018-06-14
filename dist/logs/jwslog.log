@@ -1,0 +1,15 @@
+[2018-06-14T21:21:42.176] [ERROR] cheese - { Error: ENOENT: no such file or directory, open 'F:\workspaces\gitweb-spa\dist\assets\index.html'
+    at Object.fs.openSync (fs.js:646:18)
+    at Object.fs.readFileSync (fs.js:551:33)
+    at IndexRouter.getIndex (F:\workspaces\gitweb-spa\dist\routers\IndexRouter.js:57:33)
+    at memberInvoker (F:\workspaces\gitweb-spa\node_modules\awilix-koa\lib\invokers.js:80:45)
+    at dispatch (F:\workspaces\gitweb-spa\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (F:\workspaces\gitweb-spa\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at F:\workspaces\gitweb-spa\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (F:\workspaces\gitweb-spa\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at F:\workspaces\gitweb-spa\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (F:\workspaces\gitweb-spa\node_modules\koa-router\lib\router.js:351:31)
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'F:\\workspaces\\gitweb-spa\\dist\\assets\\index.html' }
