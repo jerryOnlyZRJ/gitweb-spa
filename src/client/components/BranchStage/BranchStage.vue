@@ -58,9 +58,12 @@ export default {
         keyword: e.target.value
       })
     },
+    changePullResult(){
+      const _this = this
+      this.store.dispatch('changePullResult', _this.$router)
+    },
     ...mapActions([
-        'initBranches',
-        'changePullResult'
+        'initBranches'
     ])
   }
 }

@@ -19,9 +19,8 @@ const actions = {
 	},
 	changePullResult: ({
 		commit,
-		router,
 		state
-	}, result) => {
+	}, router) => {
 		return request
 			.get(`/user/pullbranch?branch=${state.chosenBranch.trim()}`)
 			.then(res => {
