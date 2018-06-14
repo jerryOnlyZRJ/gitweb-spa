@@ -1,0 +1,11 @@
+function extractBranchName(str) {
+	return str.split("/")[1] || 'Please choice a branch.'
+}
+
+const getters = {
+	getChosenBranch: state => {
+		return extractBranchName(state.chosenBranch)
+	}
+}
+
+export default getters
