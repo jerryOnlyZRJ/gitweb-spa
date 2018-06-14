@@ -31,6 +31,12 @@ export default {
   name: 'BranchStage',
   mounted: function() {
     this.initBranches()
+    const chosenBranch = localStorage.getItem('chosenBranch')
+    if(chosenBranch) {
+      this.$store.dispatch('choiceBranch', {
+          branch: chosenBranch
+        })
+    }
   },
   data: function(){
     return {
