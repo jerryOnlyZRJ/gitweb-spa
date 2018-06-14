@@ -7,17 +7,8 @@ import {
 	createStore
 } from './store'
 
-export function createApp() {
-	const router = createRouter()
-	const store = createStore()
-	const app = new Vue({
-		store,
-		router,
-		render: h => h(App)
-	})
-	return {
-		app,
-		router,
-		store
-	}
-}
+new Vue({
+	router,
+	store,
+	render: h => h(App)
+}).$mount('#app')

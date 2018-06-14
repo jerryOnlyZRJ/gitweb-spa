@@ -10,7 +10,7 @@ log4js.configure({
   appenders: {
     cheese: {
       type: 'file',
-      filename: './logs/jwslog.log'
+      filename: '../logs/jwslog.log'
     }
   },
   // 错误类别配置
