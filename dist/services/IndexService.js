@@ -50,8 +50,10 @@ let UserService = class UserService {
    */
   pullBranch(origin, branch) {
     try {
-      _shelljs2.default.exec(`git pull ${origin} ${branch}:${branch}`);
-      _shelljs2.default.exec(`git checkout ${branch}`);
+      const pullresult = _shelljs2.default.exec(`git pull ${origin} ${branch}:${branch}`);
+      const checkoutResult = _shelljs2.default.exec(`git checkout ${branch}`);
+      console.log(pullresult);
+      console.log(checkoutResult);
       return successMessage;
     } catch (err) {
       console.log(err);
