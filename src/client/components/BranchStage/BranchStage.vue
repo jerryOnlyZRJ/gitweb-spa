@@ -11,35 +11,34 @@
       <li 
       class="branch-item" 
       v-for="(item, key) in filteredBranches"
-      @click="choiceBranchHandler"
       :key="key"
       >
         {{ item }}
       </li>
     </ul>
     <span class="branch-text">What your choice is:</span>
-    <span class="chosen-result">{{chosenBranch}}</span>
+    <span class="chosen-result">{{getChosenBranch}}</span>
     <button class="btn">Pull It!</button>
   </div>
 </template>
 
 <script>
-  import { mapActions, mapState } from 'vuex'
+  import { mapActions, mapState, mapGetters } from 'vuex'
 
-  function init({store}){
-    console.log('BranchStage is init')
-    return store.initBranches()
-  }
+
 export default {
-  asyncData: init,
   name: 'BranchStage',
   mounted: function() {
-    init()
+    this.initBranches()
   },
-  computed: mapState([
-      'chosenBranch',
-      'filteredBranches'
-  ]),
+  computed: {
+    ...mapState([
+        'filteredBranches'
+    ]),
+    ...mapGetters([
+      'getChosenBranch',
+    ])
+  },
   methods: {
     choiceBranchItem(e){
       let branches = document.querySelectorAll('.branch-item')
@@ -47,12 +46,14 @@ export default {
         item.classList.remove('selected')
       }
       e.target.classList.add('selected')
-    },
-    choiceBranchHandler(e){
-      this.$store.dispatch('choiceBranch', e.target.innerHTML)
+      this.$store.dispatch('choiceBranch', {
+        branch: e.target.innerHTML
+      })
     },
     inputFilterHandler(e){
-      this.$store.dispatch('filterBranches', e.target.value)
+      this.$store.dispatch('filterBranches', {
+        keyword: e.target.value
+      })
     },
     ...mapActions([
         'initBranches'

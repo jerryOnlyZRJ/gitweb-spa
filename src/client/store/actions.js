@@ -13,8 +13,8 @@ const actions = {
 		commit
 	}) => {
 		return request.get('/user/getbranchlist').then(res => {
-			commit('INIT_BRANCHES', res.branchList)
-			commit('CHOICE_BRANCH', res.branchList[0])
+			commit('INIT_BRANCHES', res.data.branchList)
+			commit('CHOICE_BRANCH', res.data.branchList[0])
 		})
 	}
 }

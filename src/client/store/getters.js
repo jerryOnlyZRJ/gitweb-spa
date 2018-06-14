@@ -1,5 +1,5 @@
 function extractBranchName(str) {
-	return str.split("/")[1] || 'Please choice a branch.'
+	return str ? str.split("/")[1] : 'Please choice a branch.'
 }
 
 const getters = {

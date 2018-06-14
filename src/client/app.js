@@ -7,6 +7,9 @@ import {
 	createStore
 } from './store'
 
+const router = createRouter()
+const store = createStore()
+
 new Vue({
 	router,
 	store,

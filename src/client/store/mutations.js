@@ -1,10 +1,6 @@
 const mutations = {
-	CHOICE_BRANCH: (state, {
-		branch
-	}) => state.chosenBranch = payload.branch,
-	FILTER_BRANCHES: (state, {
-		keyword
-	}) => {
+	CHOICE_BRANCH: (state, payload) => state.chosenBranch = payload.branch,
+	FILTER_BRANCHES: (state, payload) => {
 		function filter(keyword, arr) {
 			const resultArr = arr.filter(item => {
 				const lowerKey = keyword.toLowerCase();

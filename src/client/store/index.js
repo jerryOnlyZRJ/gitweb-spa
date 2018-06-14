@@ -4,14 +4,12 @@ import getters from './getters'
 import actions from './actions'
 import mutations from './mutations'
 
-const defaultState = {
+const state = {
 	chosenBranch: '',
 	filteredBranches: []
 }
 
-const inBrowser = typeof window !== "undefined";
 Vue.use(Vuex);
-let state = (inBrowser && window.__INITIAL_STATE__) || defaultState;
 
 export function createStore() {
 	const store = new Vuex.Store({

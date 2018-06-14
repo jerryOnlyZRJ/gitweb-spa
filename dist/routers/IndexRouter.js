@@ -9,6 +9,16 @@ var _dec, _dec2, _dec3, _class, _desc, _value, _class2;
 
 var _awilixKoa = require('awilix-koa');
 
+var _fs = require('fs');
+
+var _fs2 = _interopRequireDefault(_fs);
+
+var _path = require('path');
+
+var _path2 = _interopRequireDefault(_path);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
     var desc = {};
     Object['ke' + 'ys'](descriptor).forEach(function (key) {
@@ -38,13 +48,13 @@ function _applyDecoratedDescriptor(target, property, decorators, descriptor, con
     return desc;
 }
 
+const indexPath = _path2.default.join(__dirname, '../assets/index.html');
+
 let IndexRouter = (_dec = (0, _awilixKoa.route)('/'), _dec2 = (0, _awilixKoa.route)('/index.html'), _dec3 = (0, _awilixKoa.GET)(), _dec(_class = _dec2(_class = (_class2 = class IndexRouter {
     constructor() {}
 
     async getIndex(ctx, next) {
-        ctx.body = {
-            data: 'success'
-        };
+        ctx.body = _fs2.default.readFileSync(indexPath, 'utf-8');
     }
 
 }, (_applyDecoratedDescriptor(_class2.prototype, 'getIndex', [_dec3], Object.getOwnPropertyDescriptor(_class2.prototype, 'getIndex'), _class2.prototype)), _class2)) || _class) || _class);

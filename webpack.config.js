@@ -13,6 +13,7 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
+  mode: 'development',
   entry: path.join(__dirname, './src/client/app.js'),
   output: {
     path: path.join(__dirname, './dist/assets'),
@@ -28,6 +29,9 @@ module.exports = {
       }),
       new OptimizeCSSAssetsPlugin({})
     ]
+  },
+  resolve: {
+    extensions: [".js", ".css", ".vue"]
   },
   module: {
     rules: [{
